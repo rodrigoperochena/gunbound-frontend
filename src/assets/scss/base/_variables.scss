@@ -1,0 +1,155 @@
+// Fluid typography
+/* @link https://utopia.fyi/type/calculator?c=360,16,1.25,1920,20,1.25,6,3,360-414-768-1024-1366-1440-1920&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l|m-xl&g=s,l,xl,12 */:root {
+  --step--3: clamp(0.512rem, 0.4825rem + 0.1313vw, 0.64rem);
+  --step--2: clamp(0.64rem, 0.6031rem + 0.1641vw, 0.8rem);
+  --step--1: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+  --step-0: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+  --step-1: clamp(1.25rem, 1.1779rem + 0.3205vw, 1.5625rem);
+  --step-2: clamp(1.5625rem, 1.4724rem + 0.4006vw, 1.9531rem);
+  --step-3: clamp(1.9531rem, 1.8404rem + 0.5008vw, 2.4414rem);
+  --step-4: clamp(2.4414rem, 2.3006rem + 0.626vw, 3.0518rem);
+  --step-5: clamp(3.0518rem, 2.8757rem + 0.7825vw, 3.8147rem);
+  --step-6: clamp(3.8147rem, 3.5946rem + 0.9781vw, 4.7684rem);
+}
+
+// Fluid spacing
+/* @link https://utopia.fyi/space/calculator?c=360,16,1.25,1920,20,1.25,6,3,360-414-768-1024-1366-1440-1920&s=0.75|0.5|0.25,1.5|2|3|4|6|8,s-l|m-xl&g=s,l,xl,12 */:root {
+  --space-3xs: clamp(0.25rem, 0.2356rem + 0.0641vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4712rem + 0.1282vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.7067rem + 0.1923vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.4135rem + 0.3846vw, 1.875rem);
+  --space-l: clamp(2rem, 1.8846rem + 0.5128vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.8269rem + 0.7692vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.7692rem + 1.0256vw, 5rem);
+  --space-3xl: clamp(6rem, 5.6538rem + 1.5385vw, 7.5rem);
+  --space-4xl: clamp(8rem, 7.5385rem + 2.0513vw, 10rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1635rem + 0.3846vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.399rem + 0.4487vw, 0.9375rem);
+  --space-xs-s: clamp(0.75rem, 0.6346rem + 0.5128vw, 1.25rem);
+  --space-s-m: clamp(1rem, 0.7981rem + 0.8974vw, 1.875rem);
+  --space-m-l: clamp(1.5rem, 1.2692rem + 1.0256vw, 2.5rem);
+  --space-l-xl: clamp(2rem, 1.5962rem + 1.7949vw, 3.75rem);
+  --space-xl-2xl: clamp(3rem, 2.5385rem + 2.0513vw, 5rem);
+  --space-2xl-3xl: clamp(4rem, 3.1923rem + 3.5897vw, 7.5rem);
+  --space-3xl-4xl: clamp(6rem, 5.0769rem + 4.1026vw, 10rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.6538rem + 1.5385vw, 2.5rem);
+  --space-m-xl: clamp(1.5rem, 0.9808rem + 2.3077vw, 3.75rem);
+  --gutter: clamp(1.5rem, 1.2692rem + 1.0256vw, 2.5rem);
+}
+
+// color theme variables
+//monochrome palette
+:root {
+  --color-000: hsl(30, 0%, 100%);
+  --color-025: hsl(30, 0%, 98%);
+  --color-050: hsl(30, 11%, 96%);
+  --color-075: hsl(30, 8%, 91%);
+  --color-100: hsl(30, 6%, 83%);
+  --color-200: hsl(30, 5%, 79%);
+  --color-300: hsl(30, 3%, 69%);
+  --color-400: hsl(30, 2%, 57%);
+  --color-500: hsl(30, 1%, 39%);
+  --color-600: hsl(30, 1%, 29%);
+  --color-700: hsl(30, 2%, 23%);
+  --color-750: hsl(30, 2%, 18%);
+  --color-800: hsl(30, 4%, 16%);
+  --color-850: hsl(30, 4%, 14%);
+  --color-900: hsl(30, 4%, 12%);
+  --color-1000: hsl(30, 6%, 9%);
+}
+
+:root {
+  --color-bg: var(--color-900);
+  --color-bg-darker: var(--color-1000);
+  --color-bg-content: var(--color-850);
+  --color-bg-content-hover: var(--color-800);
+  --color-bg-button: var(--color-bg-content);
+  --color-fg: var(--color-000);
+  --color-focus: var(--color-500);
+
+  --color-text: var(--color-025);
+  --color-text-intense: var(--color-000);
+  --color-bg-opacity: rgba(0,0,0,.75);
+  --color-button-hover: var(--color-bg-content);
+
+  --color-border: var(--color-700);
+  --color-shadow: rgba(0, 0, 0, .35);
+  --button-shadow: 0px .125rem .25rem rgba(0, 0, 0, .5);
+  --box-shadow: 0 0 .5rem rgba(0, 0, 0, .25);
+}
+
+// dark-theme
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-900);
+    --color-bg-darker: var(--color-1000);
+    --color-bg-content: var(--color-850);
+    --color-bg-content-hover: var(--color-800);
+    --color-bg-button: var(--color-bg-content);
+    --color-fg: var(--color-000);
+    --color-focus: var(--color-500);
+
+    --color-text: var(--color-025);
+    --color-text-intense: var(--color-000);
+    --color-bg-opacity: rgba(0,0,0,.75);
+    --color-button-hover: var(--color-bg-content);
+
+    --color-border: var(--color-700);
+    --color-shadow: rgba(0, 0, 0, .35);
+    --button-shadow: 0px .125rem .25rem rgba(0, 0, 0, .5);
+    --box-shadow: 0 0 .5rem rgba(0, 0, 0, .25);
+  }
+}
+
+// // Light theme
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     --color-bg: var(--color-000);
+//     --color-bg-darker: var(--color-025);
+//     --color-bg-content: var(--color-025);
+//     --color-bg-content-hover: var(--color-000);
+//     --color-bg-button: var(--color-025);
+//     --color-fg: var(--color-900);
+
+//     --color-text: var(--color-800);
+//     --color-text-intense: var(--color-900);
+//     --color-button-hover: var(--color-000);
+
+//     --color-border: var(--color-075);
+//     --color-shadow: rgba(0, 0, 0, .35);
+//     --button-shadow: 0px .125rem .125rem rgba(0, 0, 0, .125);
+//     --box-shadow: 0 0 .5rem rgba(0, 0, 0, .35);
+//   }
+// }
+
+// misc variables
+:root {
+  --border-radius: var(--space-3xs);
+  --transition-duration: .618s;
+  --transition-duration-fast: .3819820590666498s;
+  --transition-duration-hidden: 1.236093943139679s;
+}
+
+//fonts variables
+:root {
+  --font-heading: 'Noto Sans Display', serif;
+  --font-body: 'Noto Sans Display', serif;
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+}
+
+:root {
+  --foreground-light: hsl(0deg 0% 70.6%)
+}

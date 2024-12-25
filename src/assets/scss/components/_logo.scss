@@ -1,0 +1,24 @@
+.site-logo {
+  position: relative;
+  z-index: 1;
+
+
+  svg {
+    height: var(--space-2xl);
+    transition: var(--transition-duration);
+  }
+
+  img {
+    max-height: var(--space-2xl);
+    transition: var(--transition-duration) ease-in-out;
+
+    &:hover {
+      filter: saturate(50%) ;
+    }
+  }
+
+  .logo-name {
+    font-size: var(--step-0);
+    
+  }
+}

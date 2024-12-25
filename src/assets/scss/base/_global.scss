@@ -1,0 +1,139 @@
+// Global Styles
+::-webkit-scrollbar {
+  width: .0625rem;
+
+    @include xl {
+      width: .125rem;
+    }
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-700);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+
+  &:hover {
+    background-color: var(--color-border-project);
+  } 
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: var(--font-light);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  padding: var(--space-3xs) var(--space-2xs);
+  border-radius: 0 0 .25rem .25rem;
+  text-align: center;
+  background-color: var(--color-bg-lighter);
+  font-size: var(--step--1);
+  color: var(--color-text);
+  translate: -50% -100%;
+  transition: translate .25s ease-in-out;
+  z-index: 99;
+  opacity: 0;
+
+  &:focus {
+    translate: -50% 0;
+    opacity: 1;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  padding-bottom: var(--gutter);
+  margin-inline: auto;
+
+  @include sm {
+    max-width: 768px;
+  }
+
+  @include md {
+    max-width: 1024px;
+  }
+
+  @include lg {
+    max-width: 1280px;
+  }
+
+  @include xl {
+    max-width: 1536px;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(.25rem);
+  transition: transform var(--transition-duration-hidden), opacity var(--transition-duration-hidden), filter var(--transition-duration-hidden);
+}
+
+.hidden--top {
+  transform: translateY(-2.5rem)
+}
+
+.hidden--bottom {
+  transform: translateY(2.5rem);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+main {
+  max-width: calc(120rem + var(--gutter) + var(--gutter));
+  min-height: calc(100svh - var(--space-2xs) * 2 - var(--step--1) * 1.5);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--space-2xl) + var(--space-s)*2);
+}
+
+p {
+  margin-block: var(--space-xs);
+  max-width: 60ch;
+}
+
+.content {
+  display: flex;
+  gap: var(--gutter);
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 100%;
+
+  @include lg {
+    width: calc(50% - var(--gutter) / 2);
+  }
+}
+
+ul, ol {
+  padding-left: var(--gutter);
+}

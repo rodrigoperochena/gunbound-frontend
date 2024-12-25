@@ -1,0 +1,107 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 401;
+  background-color: var(--color-bg-content);
+  transition: transform var(--transition-duration-hidden), background-color var(--transition-duration-hidden), filter var(--transition-duration-hidden);
+  
+  // &::before {
+  //   content: '';
+  //   background-color: var(--color-brand-dark);
+  //   position: absolute;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   transform: translateY(-100%);
+  //   opacity: .99;
+  //   transition: var(--transition-duration);
+  // }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    padding-block: var(--space-s);
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .site-title {
+    font-size: var(--step-5);
+    line-height: 1;
+  }
+
+  .site-subtitle {
+    font-size: var(--step--1);
+    font-weight: var(--font-regular);
+    color: var(--foreground-light);
+    margin-left: calc(var(--space-2xl) + var(--space-2xs));
+    line-height: 1;
+  }
+
+  img {
+    max-width: var(--space-2xl);
+    z-index: 1;
+    position: absolute;
+  }
+}
+
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.scroll-down {
+  .site-header {
+    transform: translateY(-100%);
+  }
+
+  &.menu-open {
+    .site-header {
+      transform: translateY(0);
+    }
+  }
+}
+
+.scroll-up {
+  .site-header {
+    background-color: hsl(42, 4%, 9%, .8);
+    backdrop-filter: saturate(180%) blur(20px);
+
+    &::before {
+      transform: translateY(0);
+      background-color: var(--color-800);
+      box-shadow: var(--box-shadow);
+    }
+
+    .site-logo {
+      color: var(--color-text);
+
+      // svg {
+      //   &:last-of-type {
+      //     display: block;
+      //   }
+
+      //   &:first-of-type {
+      //     display: none;
+      //   }
+      // }
+  
+      .site-title {
+        border-color: var(--color-text-intense);
+      }
+    }
+  }
+
+  .menu-toggle-button {
+    span {
+      background-color: var(--color-bg);
+    }
+  }
+}

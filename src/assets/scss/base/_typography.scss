@@ -1,0 +1,13 @@
+// Loading local fonts
+// Body font - Noto Sans Display
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+
+//-----------
+.heading,
+.subheading {
+  font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
