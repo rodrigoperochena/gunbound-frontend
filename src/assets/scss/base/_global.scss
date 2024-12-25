@@ -137,3 +137,8 @@ p {
 ul, ol {
   padding-left: var(--gutter);
 }
+
+.nobullets {
+  list-style: none;
+  padding: 0;
+}

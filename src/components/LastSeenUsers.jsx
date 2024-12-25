@@ -68,7 +68,7 @@ const LastSeenUsers = () => {
           <ul>
             {lastSeenUsers.map((user) => (
               <li key={user.id}>
-            🔌 <Link to={`/users/${user.id}`}>
+                <Link to={`/users/${user.id}`}>
                   <span className="user">{user.id}</span>
                 </Link>
                 <img

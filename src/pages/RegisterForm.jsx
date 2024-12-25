@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import gameScreenshot from '../assets/images/game-screenshot.jpeg';
+import headerIcon from '../assets/images/raon.png';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({ 
@@ -42,7 +43,10 @@ const RegisterForm = () => {
       <div className='register-column'>
         <div className="register-form-container">
           <header>
-            <h1 className='heading'>Get started</h1>
+            <div className="get-started-title">
+              <h1 className='heading'>Get started</h1>
+              <img src={headerIcon} alt="" />
+            </div>
             <h2 className="subheading">Create a new account</h2>
           </header>
           <form onSubmit={handleSubmit}>

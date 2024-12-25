@@ -1,0 +1,36 @@
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  right: var(--gutter);
+  padding: var(--space-xs) var(--space-m);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--border-radius)*2);
+  transition: var(--transition-duration) ease-in-out;
+
+  li {
+    margin-block: var(--space-2xs);
+  }
+
+  .button {
+    background-color: var(--color-bg-content);
+  }
+
+  &.closed {
+    transform: translateY(calc(0px - var(--step-0))) scale(0);
+    transform-origin: center right;
+    filter: blur(1px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(calc(0px + var(--space-s) * 4 + var(--step-0))) scale(1);
+    filter: blur(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
