@@ -33,5 +33,9 @@
 
   &.active {
     text-decoration: none;
+
+    &::after {
+      display: none;
+    }
   }
 }
