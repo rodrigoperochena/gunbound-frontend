@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 import { format } from 'date-fns'
 import { Link, useSearchParams } from 'react-router-dom';
+import nak from '../assets/images/nak.gif';
 
 const LastSeenUsers = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -47,9 +48,14 @@ const LastSeenUsers = () => {
   }, [timeframe]); // Empty dependency array means this runs once after the component mounts
 
   // Render logic
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>
-  
+  if (loading) return (
+    <img src={nak} alt="nak walking loader" />
+  )
+  if (error) return (
+    <div className="container">
+      <p>Error: {error}</p>
+    </div>
+  )
   return (
     <div className="last-seen">
       <div className='container'>
@@ -68,7 +74,7 @@ const LastSeenUsers = () => {
           <ul>
             {lastSeenUsers.map((user) => (
               <li key={user.id}>
-                <Link to={`/users/${user.id}`}>
+                <Link to={`/player-rankings/${user.id}`}>
                   <span className="user">{user.id}</span>
                 </Link>
                 <img
