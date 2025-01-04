@@ -163,12 +163,7 @@ The project’s main dependencies (from `package.json`) are:
 
 ---
 
-### **11. License**
-Specify your license here (e.g., MIT, GPL).
-
----
-
-### **12. Screenshots**
+### **11. Screenshots**
 
 ### Registration Page
 ![Registration Page](src/assets/screenshots/register-form.png)
