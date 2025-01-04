@@ -2,19 +2,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import gameScreenshot from '../assets/images/game-screenshot.jpeg';
-import headerIcon from '../assets/images/raon.png';
+import jdSuccess from '../assets/images/jd.gif';
+import formIcon from '../assets/images/trico.gif';
+import usePageBodyClass from '../hooks/usePageBodyClass';
 
 const RegisterForm = () => {
+  usePageBodyClass('register-page'); // Add `home-page` class to <body>
+
   const [formData, setFormData] = useState({ 
     username: '', 
     email: '', 
     password: '',
-    // confirmPassword: '',
     gender: '', 
-    country: '' 
+    country: '',
+    adminToken: '' 
   });
   const [message, setMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
   
 
   const handleChange = (e) => {
@@ -26,11 +31,21 @@ const RegisterForm = () => {
     e.preventDefault();
 
     try {
-      // const response = await axios.post('http://192.168.0.12:5000/api/users/register', formData);
-      const response = await axios.post('https://formerly-large-man.ngrok-free.app/api/users/register', formData)
-      setMessage(response.data.message)
+      const response = await axios.post(`${apiBaseUrl}/users/register`, formData)
+      
+      if (response.data.success) {
+        setMessage(
+          <>
+            <img src={jdSuccess} alt="Jd success message gif" />
+            <span>Congratulations! Your account has been created successfully! 🎉</span>
+          </>
+        );
+      } else {
+        setMessage('An unexpected error occurred. Please try again.');
+      }
     } catch (error) {
-      setMessage(error.response?.data?.message || 'An error occurred');
+      const errorMessage = error.response?.data?.error || 'Server error occurred. Please try again later.';
+      setMessage(errorMessage);
     }
   };
 
@@ -45,7 +60,7 @@ const RegisterForm = () => {
           <header>
             <div className="get-started-title">
               <h1 className='heading'>Get started</h1>
-              <img src={headerIcon} alt="" />
+              <img src={formIcon} alt="" />
             </div>
             <h2 className="subheading">Create a new account</h2>
           </header>
@@ -114,12 +129,13 @@ const RegisterForm = () => {
                 type="text"
                 name="adminToken"
                 value={formData.adminToken}
+                onChange={handleChange}
                 placeholder="Admin Token (Optional)"
               />
             </div>
             <button className='button' type="submit">Register</button>
           </form>
-          {message && <p>{message}</p>}
+          {message && <div className="submit-message">{message}</div>}
         </div>
       </div>
       <aside>
