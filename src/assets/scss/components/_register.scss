@@ -1,7 +1,27 @@
+.register-page {
+  .site-header {
+    .container {
+      max-width: 100%;
+    }
+  }
+
+  .breadcrumb-nav {
+    .container {
+      max-width: calc(384px + var(--gutter)*2);
+
+      @include xl {
+        max-width: calc(120rem + var(--gutter) + var(--gutter));
+      }
+    }
+  }
+}
+
 .register {
   width: 100%;
   max-width: calc(120rem + var(--gutter) + var(--gutter));
-  padding: var(--space-l) var(--gutter);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  padding-bottom: var(--space-l);
   margin-inline: auto;
   display: flex;
   flex: 1 1 0%;
@@ -48,7 +68,7 @@
     justify-self: center;
 
     label {
-      font-size: var(--step--1);
+      font-size: var(--step-0);
       font-weight: var(--font-thin);
       color: var(--foreground-light);
       display: block;
@@ -94,6 +114,12 @@
   .button {
     margin-top: var(--gutter);
     width: 100%;
+  }
+
+  .submit-message {
+    display: flex;
+    align-items: end;
+    gap: var(--space-2xs);
   }
 
   aside {
