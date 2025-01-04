@@ -34,12 +34,14 @@
   .site-title {
     font-size: var(--step-5);
     line-height: 1;
+    color: var(--color-yellow-gb);
+    text-shadow: 0 0 3px black;
   }
 
   .site-subtitle {
     font-size: var(--step--1);
     font-weight: var(--font-regular);
-    color: var(--foreground-light);
+    color: var(--color-red-gb);
     margin-left: calc(var(--space-2xl) + var(--space-2xs));
     text-align: end;
     line-height: 1;
