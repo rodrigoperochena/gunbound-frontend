@@ -1,6 +1,7 @@
-// frontend/src/components/Home.jsx
+// frontend/src/components/Instructions.jsx
 import React, { useEffect } from "react";
 import usePageBodyClass from '../hooks/usePageBodyClass';
+import { Link } from "react-router-dom";
 
 const Instructions = () => {
   usePageBodyClass('instructions-page'); // Add class to <body>
@@ -32,7 +33,7 @@ const Instructions = () => {
               <li>
                 <h2 className="heading">Register Account</h2>
                 <p>By now, you should be able to connect to the game server. The last step is creating a game account.</p>
-                <a href="/register" className="button">Register</a>
+                <Link to='register' className="button">Register</Link>
               </li>
             </ol>
             <p>Once you’ve got your account set up, you’re ready to play! 🎉 If you run into any issues, let us know.</p>
