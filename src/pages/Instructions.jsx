@@ -12,7 +12,7 @@ const Instructions = () => {
   return (
     <div className="instructions">
       <div className='container'>
-        <article className="column">
+        <article>
           <h1 className="heading">How to Join Our Gunbound Thor's Hammer Private Server</h1>
           <div className="how-to">
             <p>This is a casual private server hosted on a couple of virtual machines in our home network. Since it’s set up this way, we need to configure things in a specific way to make it work and connect properly.</p>
