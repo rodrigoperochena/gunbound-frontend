@@ -1,15 +1,26 @@
 .users-ranking,
 .user-details {
+  .main-header {
+    p {
+      margin-block: var(--space-2xs);
+    }
+
+    span {
+      font-weight: var(--font-regular);
+    }
+  }
+
   .heading {
     font-size: var(--step-2);
     font-weight: var(--font-medium);
-    border-bottom: 1px solid var(--color-border);
     width: fit-content;
+    line-height: 1.2;
+    border-bottom: 2px solid var(--color-border);
   }
 
   ul,
   ol {
-    padding-top: var(--space-xs);
+    padding-top: var(--space-2xs);
   }
 
   .user-details-list,
@@ -47,6 +58,11 @@
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
+
+    em {
+      font-size: var(--step--1);
+      font-weight: var(--font-light);
+    }
   }
 }
 
@@ -56,11 +72,30 @@
     list-style: none;
   }
 
+  .gp {
+    em {
+      font-size: var(--step--1);
+    }
+  }
+
   .gold {
     color: yellow;
   }
 
   .cash {
     color: rgb(119, 151, 255);
+  }
+}
+
+.player-overview,
+.game-stats {
+  margin-top: var(--space-m);
+
+  .heading {
+    font-size: var(--step-1);
+    font-weight: var(--font-regular);
+    line-height: 1.5;
+    width: fit-content;
+    border-bottom: 1px solid var(--color-border);
   }
 }
