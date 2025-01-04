@@ -15,7 +15,7 @@ const Home = () => {
           <h3 className="heading">is back! <span>😎</span></h3>
         </div>
         <div className="cta-buttons">
-        <Link to='/instructions' className='button'>How to join</Link>
+        <Link to='/how-to-join' className='button'>How to join</Link>
         <Link to='/register' className='button'>Register</Link>
         </div>
       </div>
