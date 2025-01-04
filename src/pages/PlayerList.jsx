@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import usePageBodyClass from '../hooks/usePageBodyClass';
+import trico from '../assets/images/trico.gif';
 
 function PlayerList() {
   usePageBodyClass('users-page'); // Add `home-page` class to <body>
@@ -40,23 +41,34 @@ function PlayerList() {
     fetchPlayers();
   }, []);
 
-  if (loading) return <p>Loading players...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return (
+    <div className="container">
+      <img src={trico} alt="trico loading" />
+    </div>
+  )
+  if (error) return (
+    <div className="container">
+      <p>Error: {error}</p>
+    </div>
+  )
 
   return (
     <div className="users-ranking">
       <div className='container'>
-        <h2 className='heading'>Player List <em>&ndash; ranked by GP's</em></h2>
+        <div className="main-header">
+          <h2 className='heading'>Player Rankings <em>&ndash; ranked by GP's</em></h2>
+          <p>Here’s the ranked list of players, sorted by their game points (GP). Click on any username to view detailed player stats.</p>
+        </div>
         <ol>
           {players.map((player) => (
             <li key={player.userId}>
               <div className="user">
-                <Link to={`/users/${player.userId}`}>{player.userId}</Link>
+                <Link to={`/player-rankings/${player.userId}`}>{player.userId}</Link>
                 <img
                   src={getGradeImage(player.totalGrade)}
                   alt={`${rankNames[player.totalGrade]} rank`}
                   title={rankNames[player.totalGrade]}
-                />&mdash; {player.totalScore} GP
+                /><em>&mdash; ({player.totalScore} GP)</em>
               </div>
             </li>
           ))}
