@@ -16,13 +16,16 @@ const AppRoutes = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="register" element={<RegisterForm />} />
-        <Route path="users" element={<PlayerList />} />
-        <Route path="users/:id" element={<PlayerDetails />} />
+        <Route path="player-rankings" element={<PlayerList />} />
+        <Route path="player-rankings/:id" element={<PlayerDetails />} />
       </Route>
       
       {/* Custom Layout without LastSeenUsers */}
-      <Route path="/instructions" element={<NoLastSeenLayout />}>
+      <Route path="/how-to-join" element={<NoLastSeenLayout />}>
         <Route index element={<Instructions />} />
+      </Route>
+      <Route path="/register" element={<NoLastSeenLayout />}>
+        <Route index element={<RegisterForm />} />
       </Route>
     </Routes>
   );
