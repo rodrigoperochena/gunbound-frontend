@@ -1,11 +1,20 @@
 // Loading local fonts
 // Body font - Noto Sans Display
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Oswald&display=swap');
 
 //-----------
 .heading,
 .subheading {
   font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.mono-font {
+  font-family: "Noto Sans Mono", serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings:
